@@ -100,7 +100,7 @@ $("adminToggle").onclick=()=>{$("loginPanel").classList.toggle("open");$("loginM
 $("loginBtn").onclick=async()=>{
  $("loginMessage").textContent="Signing in…";
  try{await auth.signInWithEmailAndPassword($("email").value.trim(),$("password").value);$("password").value="";}
- catch(e){$("loginMessage").textContent="Login failed. Check your email/password.";console.error(e);}
+ catch(e){$("loginMessage").textContent="Login failed: "+(e.code||e.message);console.error(e);}
 };
 auth.onAuthStateChanged(user=>{
  isAdmin=!!user&&user.uid===ADMIN_UID;
