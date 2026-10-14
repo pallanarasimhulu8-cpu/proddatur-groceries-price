@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Proddatur Groceries Price | ప్రొద్దుటూరు కిరాణా ధరలు</title>
+<style>
+:root{--green:#176b45;--green2:#e7f5ec;--ink:#17231d;--muted:#64736a;--line:#dce7df;--bg:#f5f8f5;--white:#fff;--orange:#f3a73b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Noto Sans Telugu',Arial,sans-serif}
+header{background:linear-gradient(125deg,#104d34,#218557);color:#fff;padding:24px 18px 30px}.wrap{max-width:1050px;margin:auto}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{display:flex;gap:12px;align-items:center}.logo{width:48px;height:48px;border-radius:15px;background:#ffffff20;display:grid;place-items:center;font-size:27px}.brand h1{font-size:clamp(20px,4vw,30px);margin:0;line-height:1.2}.brand p{margin:5px 0 0;color:#d6f2e1;font-size:13px}.lang{border:1px solid #ffffff80;background:#ffffff15;color:white;border-radius:999px;padding:9px 14px;font-weight:700;cursor:pointer}.hero{padding-top:25px;max-width:690px}.hero h2{font-size:clamp(25px,5vw,38px);line-height:1.18;margin:0 0 10px}.hero p{margin:0;color:#e2f4e9;line-height:1.6}
+main{padding:0 16px}.livebar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 14px;margin:16px 0 10px;font-size:13px}.liveleft{display:flex;align-items:center;gap:8px}.dot{width:9px;height:9px;border-radius:50%;background:#d97706;display:inline-block;flex-shrink:0}.notice{background:#fff6df;border:1px solid #f0d28a;color:#76510a;padding:11px 14px;border-radius:12px;font-size:13px;margin:18px 0}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0}.search{flex:1;min-width:210px;border:1px solid var(--line);border-radius:12px;background:white;padding:13px 14px;font:inherit}.select,.btn{border:1px solid var(--line);border-radius:12px;background:white;padding:12px 14px;font:inherit;cursor:pointer}.btn.primary{background:var(--green);border-color:var(--green);color:white;font-weight:700}.btn.soft{background:var(--green2);border-color:#c7e5d1;color:var(--green);font-weight:700}.btn:disabled{opacity:.55;cursor:not-allowed}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.stat{background:white;border:1px solid var(--line);border-radius:15px;padding:15px}.stat strong{display:block;font-size:22px;color:var(--green)}.stat span{font-size:12px;color:var(--muted)}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:10px;margin:24px 0 12px;flex-wrap:wrap}.sectionhead h3{margin:0;font-size:21px}.sectionhead p{margin:4px 0 0;color:var(--muted);font-size:13px}.tablewrap{overflow:auto;background:white;border:1px solid var(--line);border-radius:15px}table{width:100%;border-collapse:collapse;min-width:570px}th,td{text-align:left;padding:13px 14px;border-bottom:1px solid #edf2ee;font-size:14px}th{background:#f0f7f2;color:#385646;font-size:12px;text-transform:uppercase;letter-spacing:.04em}tbody tr:last-child td{border-bottom:0}.itemname{font-weight:700}.telugu{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:3px}.price{font-weight:800;color:var(--green);font-size:16px}.smallmuted{font-size:12px;color:var(--muted)}.tag{display:inline-block;border-radius:99px;background:#eef4ef;padding:4px 8px;font-size:11px;color:#42634e}.empty{text-align:center;padding:30px;color:var(--muted)}
+.panel{display:none;background:white;border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:20px}.panel.open{display:block}.panel h3{margin-top:0}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field label{display:block;font-size:12px;font-weight:700;color:#53645a;margin-bottom:5px}.field input,.field select{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;font:inherit}.formactions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.footer{margin-top:28px;padding:20px 0 35px;color:var(--muted);font-size:12px;text-align:center}.loginbox{background:#f7faf7;border:1px solid var(--line);padding:14px;border-radius:12px;margin:12px 0}.loginbox input{width:100%;padding:11px;border:1px solid var(--line);border-radius:10px;margin:5px 0 10px;font:inherit}.hidden{display:none!important}
+@media(max-width:560px){.stats{gap:7px}.stat{padding:11px}.stat strong{font-size:18px}.stat span{font-size:11px}.formgrid{grid-template-columns:1fr}.brand h1{font-size:21px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><div class="top"><div class="brand"><div class="logo">🛒</div><div><h1>Proddatur Groceries Price</h1><p>ప్రొద్దుటూరు కిరాణా ధరలు • Local price guide</p></div></div><button class="lang" id="langBtn">తెలుగు / English</button></div><div class="hero"><h2 id="heroTitle">Daily grocery prices, all in one place.</h2><p id="heroSub">Check everyday essentials in Proddatur, Andhra Pradesh. Prices can vary by shop, quality and market conditions.</p></div></div></header>
+<main class="wrap">
+<div class="livebar"><div class="liveleft"><span class="dot" id="liveDot"></span><span id="liveStatus">Connecting to price database…</span></div><button class="btn soft" id="refreshBtn" type="button">↻ Refresh prices</button></div>
+<div class="notice" id="notice">Prices should be confirmed with local shops. Demo prices are shown only until the first verified prices are published by the admin.</div>
+<div class="stats"><div class="stat"><strong id="itemCount">0</strong><span>Items listed / వస్తువులు</span></div><div class="stat"><strong id="lastUpdated">—</strong><span>Last updated / చివరి అప్‌డేట్</span></div><div class="stat"><strong>₹</strong><span>Prices in Indian Rupees</span></div></div>
+<div class="controls"><input id="search" class="search" placeholder="Search rice, dal, oil… / బియ్యం, పప్పు…" aria-label="Search groceries"><select id="category" class="select" aria-label="Filter category"><option value="all">All categories / అన్ని</option></select><button id="adminToggle" class="btn primary">🔐 Admin Login</button><button id="logoutBtn" class="btn hidden">Logout</button></div>
+<div class="sectionhead"><div><h3 id="listTitle">Today's grocery list</h3><p id="listSub">Community price guide • Search or select a category</p></div><span class="tag" id="dateTag">Today</span></div>
+<div class="tablewrap"><table><thead><tr><th>Item / వస్తువు</th><th>Category / వర్గం</th><th>Price / ధర</th><th>Unit / కొలత</th><th id="actionHead" class="hidden">Admin</th></tr></thead><tbody id="priceRows"></tbody></table><div id="empty" class="empty hidden">No prices published yet. Admin can log in and add verified prices. / ఇంకా ధరలు లేవు.</div></div>
+<section class="panel" id="loginPanel"><h3>Admin Login</h3><p class="smallmuted">Only the authorized admin account can change prices.</p><div class="loginbox"><label for="email">Admin email</label><input id="email" type="email" autocomplete="username" placeholder="Enter admin email"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="Enter password"><button id="loginBtn" class="btn primary" type="button">Login</button><p id="loginMessage" class="smallmuted" role="status"></p></div></section>
+<section class="panel" id="editor"><h3 id="editorTitle">Manage grocery prices</h3><p class="smallmuted">Changes are saved online in Firebase and become visible to everyone. Enter prices checked with a local shop.</p><form id="priceForm"><div class="formgrid"><div class="field"><label for="itemEn">Item name (English)</label><input id="itemEn" required placeholder="e.g. Toor dal"></div><div class="field"><label for="itemTe">వస్తువు పేరు (తెలుగు)</label><input id="itemTe" placeholder="ఉదా: కందిపప్పు"></div><div class="field"><label for="itemCat">Category / వర్గం</label><select id="itemCat"><option>Grains & Rice</option><option>Pulses & Dal</option><option>Oil & Ghee</option><option>Vegetables</option><option>Spices</option><option>Sugar & Essentials</option><option>Dairy</option><option>Other</option></select></div><div class="field"><label for="itemPrice">Price in ₹</label><input id="itemPrice" required type="number" min="0.01" step="0.01" placeholder="e.g. 65"></div><div class="field"><label for="itemUnit">Unit / కొలత</label><select id="itemUnit"><option value="kg">per kg / కిలో</option><option value="litre">per litre / లీటర్</option><option value="500 g">per 500 g / 500 గ్రాములు</option><option value="piece">per piece / ఒక్కటి</option><option value="dozen">per dozen / డజను</option><option value="pack">per pack / ప్యాకెట్</option></select></div><div class="field"><label for="priceDate">Price date / ధర తేదీ</label><input id="priceDate" type="date" required></div></div><div class="formactions"><button class="btn primary" type="submit" id="saveBtn">Save price online</button><button class="btn" type="button" id="cancelEdit">Cancel</button></div></form><h4>Manage items / వస్తువులు</h4><div id="manageRows"></div></section>
+<div class="footer"><strong>Proddatur Groceries Price</strong><br>Community price guide. Confirm prices with your local shop before purchasing.<br><br>Made for Proddatur, Andhra Pradesh • Telugu + English</div>
+</main>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyA6oj6RchWF9Bp1v-CFC9g75rEVhBxuhP8",
+  authDomain: "proddatur-groceries-price.firebaseapp.com",
+  projectId: "proddatur-groceries-price",
+  storageBucket: "proddatur-groceries-price.firebasestorage.app",
+  messagingSenderId: "875726741722",
+  appId: "1:875726741722:web:854042de5decff653585e3",
+  measurementId: "G-MQGM5BGQ1Z"
+};
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+const ADMIN_UID = "KXYNWSmrYhVcMegQ9gCXTBjtFjr1";
+const starter = [
+{id:"demo-1",en:"Rice (regular)",te:"బియ్యం (సాధారణం)",cat:"Grains & Rice",price:48,unit:"kg",date:""},
+{id:"demo-2",en:"Basmati rice",te:"బాస్మతి బియ్యం",cat:"Grains & Rice",price:110,unit:"kg",date:""},
+{id:"demo-3",en:"Toor dal",te:"కందిపప్పు",cat:"Pulses & Dal",price:145,unit:"kg",date:""},
+{id:"demo-4",en:"Moong dal",te:"పెసరపప్పు",cat:"Pulses & Dal",price:125,unit:"kg",date:""},
+{id:"demo-5",en:"Chana dal",te:"శెనగపప్పు",cat:"Pulses & Dal",price:90,unit:"kg",date:""},
+{id:"demo-6",en:"Sunflower oil",te:"సన్‌ఫ్లవర్ నూనె",cat:"Oil & Ghee",price:145,unit:"litre",date:""},
+{id:"demo-7",en:"Groundnut oil",te:"వేరుశెనగ నూనె",cat:"Oil & Ghee",price:190,unit:"litre",date:""},
+{id:"demo-8",en:"Sugar",te:"చక్కెర",cat:"Sugar & Essentials",price:45,unit:"kg",date:""},
+{id:"demo-9",en:"Jaggery",te:"బెల్లం",cat:"Sugar & Essentials",price:60,unit:"kg",date:""},
+{id:"demo-10",en:"Wheat flour (atta)",te:"గోధుమ పిండి",cat:"Grains & Rice",price:48,unit:"kg",date:""},
+{id:"demo-11",en:"Salt",te:"ఉప్పు",cat:"Sugar & Essentials",price:22,unit:"kg",date:""},
+{id:"demo-12",en:"Red chilli powder",te:"కారం పొడి",cat:"Spices",price:220,unit:"kg",date:""},
+{id:"demo-13",en:"Turmeric powder",te:"పసుపు",cat:"Spices",price:180,unit:"kg",date:""},
+{id:"demo-14",en:"Milk",te:"పాలు",cat:"Dairy",price:30,unit:"500 g",date:""},
+{id:"demo-15",en:"Onion",te:"ఉల్లిపాయలు",cat:"Vegetables",price:35,unit:"kg",date:""},
+{id:"demo-16",en:"Potato",te:"బంగాళాదుంపలు",cat:"Vegetables",price:32,unit:"kg",date:""},
+{id:"demo-17",en:"Tomato",te:"టమాటాలు",cat:"Vegetables",price:30,unit:"kg",date:""},
+{id:"demo-18",en:"Eggs",te:"గుడ్లు",cat:"Other",price:7,unit:"piece",date:""}
+];
+const $ = id => document.getElementById(id);
+const today = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`; };
+let items = starter.map(x=>({...x}));
+let isAdmin = false, editingId = null, usingDemo = true, unsubscribe = null;
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function catName(c){const m={"Grains & Rice":"ధాన్యాలు & బియ్యం","Pulses & Dal":"పప్పులు","Oil & Ghee":"నూనె & నెయ్యి","Vegetables":"కూరగాయలు","Spices":"మసాలాలు","Sugar & Essentials":"చక్కెర & నిత్యావసరాలు","Dairy":"పాల ఉత్పత్తులు","Other":"ఇతరాలు"};return m[c]||c;}
+function unitName(u){return ({"kg":"per kg / కిలో","litre":"per litre / లీటర్","500 g":"per 500 g / 500 గ్రాములు","piece":"per piece / ఒక్కటి","dozen":"per dozen / డజను","pack":"per pack / ప్యాకెట్"})[u]||u;}
+function status(msg,ok=false){$("liveStatus").textContent=msg;$("liveDot").style.background=ok?"#16a34a":"#d97706";}
+function render(){
+ const q=$("search").value.trim().toLowerCase(), cat=$("category").value;
+ const list=items.filter(x=>(cat==="all"||x.cat===cat)&&(`${x.en} ${x.te||""} ${x.cat}`.toLowerCase().includes(q)));
+ $("priceRows").innerHTML=list.map(x=>`<tr><td><span class="itemname">${esc(x.en)}</span>${x.te?`<span class="telugu">${esc(x.te)}</span>`:""}</td><td>${esc(catName(x.cat))}</td><td class="price">₹${Number(x.price).toLocaleString("en-IN",{maximumFractionDigits:2})}</td><td>${esc(unitName(x.unit))}</td>${isAdmin?`<td><button class="btn" type="button" onclick="editItem('${esc(x.id)}')">Edit</button> <button class="btn" type="button" onclick="deleteItem('${esc(x.id)}')">Delete</button></td>`:""}</tr>`).join("");
+ $("empty").classList.toggle("hidden",list.length>0);
+ $("itemCount").textContent=items.length;
+ const dates=items.map(x=>x.date).filter(Boolean).sort(); $("lastUpdated").textContent=dates.length?dates[dates.length-1]:(usingDemo?"Demo":"—");
+ $("actionHead").classList.toggle("hidden",!isAdmin);
+ renderManage();
+}
+function populateCats(){const old=$("category").value;const cats=[...new Set(items.map(x=>x.cat))].sort();$("category").innerHTML='<option value="all">All categories / అన్ని</option>'+cats.map(c=>`<option value="${esc(c)}">${esc(catName(c))}</option>`).join("");if(cats.includes(old))$("category").value=old;}
+function renderManage(){ $("manageRows").innerHTML=isAdmin?items.map(x=>`<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 0;border-bottom:1px solid #edf2ee"><div><b>${esc(x.en)}</b> <span class="smallmuted">₹${esc(x.price)} / ${esc(x.unit)}</span></div><div><button class="btn" type="button" onclick="editItem('${esc(x.id)}')">Edit</button> <button class="btn" type="button" onclick="deleteItem('${esc(x.id)}')">Delete</button></div></div>`).join(""):""; }
+function setAdminUI(){ $("adminToggle").classList.toggle("hidden",isAdmin);$("logoutBtn").classList.toggle("hidden",!isAdmin);$("editor").classList.toggle("open",isAdmin);if(!isAdmin){$("editor").classList.remove("open");$("loginPanel").classList.remove("open");}render();}
+async function loadPrices(){
+ try{
+  if(unsubscribe)unsubscribe();
+  unsubscribe=db.collection("products").onSnapshot(snapshot=>{
+   if(snapshot.empty){usingDemo=true;items=starter.map(x=>({...x}));$("notice").textContent="Demo prices only — not verified live Proddatur market rates. Admin: log in and publish verified prices.";status("Database connected • Showing demo prices until verified prices are published",true);}
+   else{usingDemo=false;items=snapshot.docs.map(d=>({id:d.id,...d.data()}));$("notice").textContent="Prices are submitted by the site admin. Please confirm with your local shop.";status("Live prices connected • Updates appear automatically",true);}
+   populateCats();render();
+  },err=>{status("Database connection error. Check Firebase settings.",false);console.error(err);});
+ }catch(e){status("Could not connect to price database.",false);console.error(e);}
+}
+$("adminToggle").onclick=()=>{$("loginPanel").classList.toggle("open");$("loginMessage").textContent="";if($("loginPanel").classList.contains("open"))$("loginPanel").scrollIntoView({behavior:"smooth",block:"start"});};
+$("loginBtn").onclick=async()=>{
+ $("loginMessage").textContent="Signing in…";
+ try{await auth.signInWithEmailAndPassword($("email").value.trim(),$("password").value);$("password").value="";}
+ catch(e){$("loginMessage").textContent="Login failed. Check your email/password.";console.error(e);}
+};
+auth.onAuthStateChanged(user=>{
+ isAdmin=!!user&&user.uid===ADMIN_UID;
+ if(user&&!isAdmin){auth.signOut();$("loginMessage").textContent="This account is not authorized as admin.";}
+ if(isAdmin){$("loginPanel").classList.remove("open");$("loginMessage").textContent="Admin logged in.";}
+ setAdminUI();
+});
+$("logoutBtn").onclick=()=>auth.signOut();
+$("priceForm").addEventListener("submit",async e=>{
+ e.preventDefault();
+ if(!isAdmin){alert("Admin login required.");return;}
+ const id=editingId||("item-"+Date.now());
+ const obj={en:$("itemEn").value.trim(),te:$("itemTe").value.trim(),cat:$("itemCat").value,price:Number($("itemPrice").value),unit:$("itemUnit").value,date:$("priceDate").value||today()};
+ try{await db.collection("products").doc(id).set(obj);editingId=null;$("priceForm").reset();$("priceDate").value=today();alert("Price saved online. Everyone can now see it.");}
+ catch(err){alert("Could not save price. Check internet and Firestore Rules.");console.error(err);}
+});
+window.editItem=id=>{if(!isAdmin)return;const x=items.find(a=>a.id===id);if(!x)return;if(String(id).startsWith("demo-")){alert("These are demo examples, not database records. Add the verified price as a new item using the form.");return;}editingId=String(id);$("itemEn").value=x.en;$("itemTe").value=x.te||"";$("itemCat").value=x.cat;$("itemPrice").value=x.price;$("itemUnit").value=x.unit;$("priceDate").value=x.date||today();$("editor").scrollIntoView({behavior:"smooth",block:"start"});};
+window.deleteItem=async id=>{if(!isAdmin)return;if(String(id).startsWith("demo-")){alert("Demo examples cannot be deleted. Publish real prices to replace the demo list.");return;}if(confirm("Delete this price?")){try{await db.collection("products").doc(String(id)).delete();}catch(e){alert("Could not delete. Check Firestore Rules.");console.error(e);}}};
+$("cancelEdit").onclick=()=>{editingId=null;$("priceForm").reset();$("priceDate").value=today();};
+$("search").addEventListener("input",render);$("category").addEventListener("change",render);
+$("refreshBtn").onclick=()=>loadPrices();
+$("langBtn").onclick=()=>{document.documentElement.lang=document.documentElement.lang==="te"?"en":"te";$("heroTitle").textContent=document.documentElement.lang==="te"?"రోజువారీ కిరాణా ధరలు — ఒకే చోట.":"Daily grocery prices, all in one place.";};
+$("priceDate").value=today();
+populateCats();render();loadPrices();
+</script>
+</body>
+</html>
